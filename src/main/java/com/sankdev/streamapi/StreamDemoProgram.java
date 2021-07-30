@@ -18,7 +18,7 @@ public class StreamDemoProgram {
 		
 		System.out.println();
 		
-		langs.stream().filter(s -> s.contains("Java")).forEach(System.out::println);;
+		langs.stream().filter(s -> s.contains("Java")).forEach(System.out::println);
 	
 	}
 

@@ -12,7 +12,7 @@ public class AcceptUserInputRe {
 
 		boolean validInput = false;
 		String numberAsString = "";
-		long wholeNumber = 0;
+		long wholeNumber;
 
 		do {
 			// prompt and read input

@@ -11,7 +11,7 @@ public class TryWithResourcesProgram {
 		try {
 			writeFile(new BufferedWriter(new FileWriter("Easy TryWithResourses")), "This is easy since Java 9");
 		} catch (IOException exc) {
-			System.out.println(exc);
+			exc.printStackTrace();
 		}
 	}
 	
@@ -20,7 +20,7 @@ public class TryWithResourcesProgram {
 		try(writer) {
 			writer.write(text);
 		} catch (IOException exc) {
-			System.out.println(exc);
+			exc.printStackTrace();
 		}
 	}
 

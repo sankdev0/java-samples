@@ -11,7 +11,7 @@ public class ScanUserInput {
 
 		// read scanner input and process InputMismatchException
 		boolean validNumberInput = false;
-		long longNumber = 0;
+		long longNumber;
 
 		// !!! Баг - уходит в бесконечный цикл при неправильном вводе!!! 
 		do {

@@ -11,7 +11,7 @@ public class AcceptUserInput {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
 		String numberAsString = "";
-		long numberAsLong = 0;
+		long numberAsLong;
 
 		boolean numberIsValid = false;
 

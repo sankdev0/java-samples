@@ -11,7 +11,7 @@ public class OSProcessControlProgram {
 	
 	// just a snapshot of Ids
 	public static void listProcesses() {
-		ProcessHandle.allProcesses().forEach(System.out::println);;
+		ProcessHandle.allProcesses().forEach(System.out::println);
 	}
 	
 	public static void listProcessesInfo() {
@@ -27,5 +27,6 @@ public class OSProcessControlProgram {
 		Optional<String> userName = handle.info().user();
 		return pid + " alive: " + isAlive + " " + handleName + "CPU duration: " + cpuDuration + " user: " + userName;
 	}
+
 
 }
