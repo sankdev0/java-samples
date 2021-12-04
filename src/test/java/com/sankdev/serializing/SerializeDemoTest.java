@@ -20,7 +20,7 @@ public class SerializeDemoTest {
     demo.savePerson(person, tmpFileName);
     Person loadedPerson = demo.loadPerson(tmpFileName);
 
-    // Files.deleteIfExists(Paths.get(tmpFileName));
+    Files.deleteIfExists(Paths.get(tmpFileName));
 
     Assert.assertEquals("Serialized object and the loaded object are not equal", person,
         loadedPerson);
