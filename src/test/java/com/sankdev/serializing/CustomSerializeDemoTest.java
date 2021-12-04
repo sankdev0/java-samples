@@ -1,21 +1,21 @@
 package com.sankdev.serializing;
 
-import com.sankdev.serializing.SerializeDemo.Person;
+import com.sankdev.serializing.CustomSerializeDemo.Person;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class SerializeDemoTest {
+public class CustomSerializeDemoTest {
 
   @Test
   public void givenPerson_whenSerialize_thenEqualObjects() throws IOException {
     Person person = new Person("Ivan", "Man", 25);
-    String tmpFileName = System.getProperty("java.io.tmpdir") + "person.bin";
+    String tmpFileName = System.getProperty("java.io.tmpdir") + "custom-person.bin";
     Files.deleteIfExists(Paths.get(tmpFileName));
 
-    SerializeDemo demo = new SerializeDemo();
+    CustomSerializeDemo demo = new CustomSerializeDemo();
 
     demo.savePerson(person, tmpFileName);
     Person loadedPerson = demo.loadPerson(tmpFileName);
