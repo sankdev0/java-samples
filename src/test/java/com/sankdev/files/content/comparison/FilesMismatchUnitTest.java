@@ -15,8 +15,10 @@ public class FilesMismatchUnitTest {
 
   @BeforeAll
   public static void setup() throws IOException {
-    filePath1 = Files.createTempFile("file1", ".txt");
-    filePath2 = Files.createTempFile("file2", ".txt");
+    filePath1 = Files.createTempFile(FilesMismatchUnitTest.class.getSimpleName() + "-test-file-01",
+        ".txt");
+    filePath2 = Files.createTempFile(FilesMismatchUnitTest.class.getSimpleName() + "-test-file-02",
+        ".txt");
   }
 
   @Test
@@ -27,7 +29,7 @@ public class FilesMismatchUnitTest {
 
     long mismatchIdx = Files.mismatch(filePath1, filePath2);
 
-    Assertions.assertEquals(-1, mismatchIdx, "The files are not identical");
+    Assertions.assertEquals(-1, mismatchIdx);
   }
 
   @Test
@@ -38,7 +40,7 @@ public class FilesMismatchUnitTest {
 
     long mismatchIdx = Files.mismatch(filePath1, filePath2);
 
-    Assertions.assertEquals(10, mismatchIdx, "Should have found mismatch at position 10");
+    Assertions.assertEquals(10, mismatchIdx);
   }
 
   @AfterAll
