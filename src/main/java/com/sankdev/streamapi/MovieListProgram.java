@@ -16,28 +16,55 @@ public class MovieListProgram {
         movies.add(new Movie("The Dark Knight", "Christopher Nolan", 2007, 9.0));
         movies.add(new Movie("The Dark Knight Rises", "Christopher Nolan", 2012, 8.5));
 
+        System.out.println("***");
+        System.out.println("===>>> Imperative style");
+
         MovieList movieListImperative = new MovieListImperative();
 
         List<String> movieTitlesImperative = movieListImperative.getMovieTitles(movies);
-        System.out.println("All Movie Titles in imperative style: "
+        System.out.println("All Movie Titles: "
                 + System.lineSeparator() + movieTitlesImperative);
 
-        List<Movie> nolanMovies = movieListImperative.getNolanMovies(movies);
-        System.out.println("Nolan Movie Titles in imperative style: "
-                + System.lineSeparator() + movieListImperative.getMovieTitles(nolanMovies));
+        List<Movie> nolanMoviesImperative = movieListImperative.getNolanMovies(movies);
+        System.out.println("Nolan Movie Titles: "
+                + System.lineSeparator() + movieListImperative.getMovieTitles(nolanMoviesImperative));
 
-        List<Movie> bestMovies = movieListImperative.getBestMovies(movies);
-        System.out.println("Best Movie Titles in imperative style: "
-                + System.lineSeparator() + movieListImperative.getMovieTitles(bestMovies));
+        List<Movie> bestMoviesImperative = movieListImperative.getBestMovies(movies);
+        System.out.println("Best Movie Titles: "
+                + System.lineSeparator() + movieListImperative.getMovieTitles(bestMoviesImperative));
 
-        double averageNolanRating = movieListImperative.getAverageRating(nolanMovies);
-        System.out.println("Average Rating of Nolan movies in imperative style"
-                + System.lineSeparator() + averageNolanRating);
+        double averageNolanRatingImperative = movieListImperative.getAverageRating(nolanMoviesImperative);
+        System.out.println("Average Rating of Nolan movies"
+                + System.lineSeparator() + averageNolanRatingImperative);
 
-        List<Movie> moviesOlderThan2000 = movieListImperative.getMoviesOlderThan2000(movies);
-        System.out.println("Movies older than 2000 in imperative style: "
-                + System.lineSeparator() + movieListImperative.getMovieTitles(moviesOlderThan2000));
+        List<Movie> moviesOlderThan2000Imperative = movieListImperative.getMoviesOlderThan2000(movies);
+        System.out.println("Movies older than 2000: "
+                + System.lineSeparator() + movieListImperative.getMovieTitles(moviesOlderThan2000Imperative));
 
+        System.out.println("***");
+        System.out.println("===>>> Functional style");
+
+        MovieList movieListFunctional = new MovieListFunctional();
+
+        List<String> movieTitlesFunctional = movieListFunctional.getMovieTitles(movies);
+        System.out.println("All Movie Titles: "
+                + System.lineSeparator() + movieTitlesFunctional);
+
+        List<Movie> nolanMoviesFunctional = movieListFunctional.getNolanMovies(movies);
+        System.out.println("Nolan Movie Titles: "
+                + System.lineSeparator() + movieListFunctional.getMovieTitles(nolanMoviesFunctional));
+
+        List<Movie> bestMoviesFunctional = movieListFunctional.getBestMovies(movies);
+        System.out.println("Best Movie Titles: "
+                + System.lineSeparator() + movieListFunctional.getMovieTitles(bestMoviesFunctional));
+
+        double averageNolanRatingFunctional = movieListFunctional.getAverageRating(nolanMoviesFunctional);
+        System.out.println("Average Rating of Nolan movies:"
+                + System.lineSeparator() + averageNolanRatingFunctional);
+
+        List<Movie> moviesOlderThan2000Functional = movieListFunctional.getMoviesOlderThan2000(movies);
+        System.out.println("Movies older than 2000: "
+                + System.lineSeparator() + movieListFunctional.getMovieTitles(moviesOlderThan2000Functional));
     }
 
 }
