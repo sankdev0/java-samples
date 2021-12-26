@@ -4,8 +4,8 @@ import com.sankdev.serializing.XmlEncodeDecodeDemo.Person;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 public class XmlEncodeDecodeDemoTest {
 
@@ -22,8 +22,8 @@ public class XmlEncodeDecodeDemoTest {
 
     Files.deleteIfExists(Paths.get(tmpFileName));
 
-    Assert.assertEquals("XML encoded object and the decoded object are not equal", person,
-        decodedPerson);
+    Assertions.assertEquals(person, decodedPerson,
+        "XML encoded object and the decoded object are not equal");
   }
 
 }

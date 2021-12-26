@@ -4,8 +4,8 @@ import com.sankdev.serializing.CustomSerializeDemo.Person;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 public class CustomSerializeDemoTest {
 
@@ -22,8 +22,8 @@ public class CustomSerializeDemoTest {
 
     Files.deleteIfExists(Paths.get(tmpFileName));
 
-    Assert.assertEquals("Serialized object and the loaded object are not equal", person,
-        loadedPerson);
+    Assertions.assertEquals(person, loadedPerson,
+        "Serialized object and the loaded object are not equal");
   }
 
 }
